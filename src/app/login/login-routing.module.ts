@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Shell } from '@app/shell/shell.service';
-import { extract } from '@app/core';
-import { LoginComponent } from '@app/login/component/login.component';
+import { LoginComponent } from './component/login.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, data: { title: extract('Login') }},
-  
-  Shell.childRoutes([
-    { },
-  ])
+  { path: 'login', component: LoginComponent, data: { title:('Login') }},
+  { path: 'password/reset', component: PasswordResetComponent },
+
 ];
 
 @NgModule({
