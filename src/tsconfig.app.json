@@ -12,6 +12,6 @@
     "**/*.mock.ts"
   ],
   "angularCompilerOptions": {
-    "preserveWhitespaces": true
+    "preserveWhitespaces": false
   }
 }
