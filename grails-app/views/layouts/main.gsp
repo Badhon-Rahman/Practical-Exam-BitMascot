@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        <g:layoutTitle default="Grails"/>
+        <g:layoutTitle default="Practical Exam"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -14,36 +14,37 @@
 </head>
 <body>
 
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/#">
-                    <i class="fa grails-icon">
-                        <asset:image src="grails-cupsonly-logo-white.svg"/>
-                    </i> Grails
-                </a>
-            </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
-        </div>
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <i class="fa fa-user"></i>
+      <input type="text" placeholder="First Name"/>
+      <input type="text" placeholder="Last Name"/>
+      <input type="text" placeholder="Email Address"/>
+      <input type="text" placeholder="Phone"/>
+      <div class="well"> 
+        <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+      </div>
     </div>
+      <input type="password" placeholder="password"/>
+      <button class="btn btn-primary" type="submit">Regester</button>
+      <button class="btn btn-primary" type="submit">Cancel</button>
+      <p class="message">Already have an account? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="User Name"/>
+      <input type="password" placeholder="Password"/>
+      <div class="row">
+      <button class="btn btn-primary" type="submit">Login</button>
+      <button class="btn btn-primary" type="submit">Clear</button>
+      <p class="message">Are you new here? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
+    
 
-    <g:layoutBody/>
-
-    <div class="footer" role="contentinfo"></div>
-
-    <div id="spinner" class="spinner" style="display:none;">
-        <g:message code="spinner.alt" default="Loading&hellip;"/>
-    </div>
 
     <asset:javascript src="application.js"/>
 

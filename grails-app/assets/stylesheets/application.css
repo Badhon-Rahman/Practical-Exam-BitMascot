@@ -10,6 +10,8 @@
 *= require bootstrap
 *= require grails
 *= require main
-*= require mobile
+*= require login
 *= require_self
+*= require font-awesome
+*= require font-awesome.min
 */
