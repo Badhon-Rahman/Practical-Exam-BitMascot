@@ -7,9 +7,8 @@
         <g:layoutTitle default="Practical Exam"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
     <asset:stylesheet src="application.css"/>
-
+    
     <g:layoutHead/>
 </head>
 <body>
@@ -25,12 +24,12 @@
       <div class="well"> 
         <div class="form-group">
         <label>Date of Birth</label>
-        <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+        <input type="date" class="form-control" id="DofB" placeholder="Date of Birth">
       </div>
     </div>
       <input type="password" placeholder="password"/>
       <button class="btn btn-primary" type="submit">Regester</button>
-      <button class="btn btn-primary" type="submit">Cancel</button>
+      <button class="btn btn-primary" id="reset-btn" type="reset" value="Reset">Cancel</button>
       <p class="message">Already have an account? <a href="#">Sign In</a></p>
     </form>
     <form class="login-form">
@@ -38,8 +37,8 @@
       <input type="password" placeholder="Password"/>
       <div class="row">
       <button class="btn btn-primary" type="submit">Login</button>
-      <button class="btn btn-primary" type="submit">Clear</button>
-      <p class="message">Are you new here? <a href="#">Create an account</a></p>
+      <button class="btn btn-primary" id="reset-btn" type="reset" value="Reset">Clear</button>
+      <p class="message">Are you new here? <a href="#">Regester Now</a></p>
     </form>
   </div>
 </div>

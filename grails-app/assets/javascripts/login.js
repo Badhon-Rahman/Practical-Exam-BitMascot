@@ -1,3 +1,4 @@
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "medium");
  });
+ $(".form").closest('form').find("input[type=text], textarea").val("");
