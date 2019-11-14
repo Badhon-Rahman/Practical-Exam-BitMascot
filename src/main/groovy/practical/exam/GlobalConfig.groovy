@@ -1,4 +1,4 @@
-package exam.practical.userPortal
+package practical.exam
 
 class GlobalConfig {
     public static final def USER_TYPE = [
@@ -6,7 +6,8 @@ class GlobalConfig {
             REGULAR_MEMBER: "REGULAR_MEMBER",
     ]
 
+
     public static Integer itemsPerPage() {
-        return 10
+        return 5
     }
 }

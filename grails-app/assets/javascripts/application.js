@@ -9,7 +9,7 @@
 //= require bootstrap
 //= require_tree .
 //= require_self
-//= require login
+//= require userLogin
 
 if (typeof jQuery !== 'undefined') {
     (function($) {

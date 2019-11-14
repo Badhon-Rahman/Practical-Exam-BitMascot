@@ -1,4 +1,4 @@
-package bitmascot.exam.project
+package practical.exam
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

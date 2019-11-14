@@ -1,4 +1,4 @@
-package bitmascot.exam.project
+package practical.exam
 
 class UrlMappings {
 

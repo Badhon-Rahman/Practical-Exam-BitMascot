@@ -1,7 +1,6 @@
-package bitmascot.exam.project
+package practical.exam
 
 class MemberController {
-
     MemberService memberService
 
     def index() {
@@ -83,5 +82,6 @@ class MemberController {
             redirect(controller: "member", action: "index")
         }
     }
+
 
 }

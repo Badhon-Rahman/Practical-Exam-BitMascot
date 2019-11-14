@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: bitmascot.exam.project
+        defaultPackage: practical.exam
     spring:
         transactionManagement:
             proxies: false

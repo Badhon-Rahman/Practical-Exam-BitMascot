@@ -1,4 +1,4 @@
-package exam.practical.userPortal
+package practical.exam
 
 import org.grails.web.util.WebUtils
 class AppUtil {

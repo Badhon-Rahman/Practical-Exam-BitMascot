@@ -11,7 +11,7 @@ buildscript {
 }
 
 version "0.1"
-group "bitmascot.exam.project"
+group "practical.exam"
 
 apply plugin:"eclipse"
 apply plugin:"idea"

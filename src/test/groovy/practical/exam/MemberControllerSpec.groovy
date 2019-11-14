@@ -1,4 +1,4 @@
-package bitmascot.exam.project
+package practical.exam
 
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification

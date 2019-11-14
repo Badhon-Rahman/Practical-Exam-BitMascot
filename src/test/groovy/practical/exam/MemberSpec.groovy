@@ -1,9 +1,9 @@
-package bitmascot.exam.project
+package practical.exam
 
-import grails.testing.services.ServiceUnitTest
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class MemberServiceSpec extends Specification implements ServiceUnitTest<MemberService>{
+class MemberSpec extends Specification implements DomainUnitTest<Member> {
 
     def setup() {
     }

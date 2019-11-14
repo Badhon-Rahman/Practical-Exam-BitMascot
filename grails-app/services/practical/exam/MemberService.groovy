@@ -1,9 +1,8 @@
-package bitmascot.exam.project
+package practical.exam
 
 import grails.web.servlet.mvc.GrailsParameterMap
 
 class MemberService {
-
     def save(GrailsParameterMap params) {
         Member member = new Member(params)
         def response = AppUtil.saveResponse(false, member)
@@ -15,6 +14,7 @@ class MemberService {
         }
         return response
     }
+
 
     def update(Member member, GrailsParameterMap params) {
         member.properties = params
