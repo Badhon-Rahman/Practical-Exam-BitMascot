@@ -7,7 +7,7 @@ class Member {
     String email
     String address
     String phone
-    String dateOfBirth
+    Date dateOfBirth
     String password
     String memberType = GlobalConfig.USER_TYPE.REGULAR_MEMBER
 
