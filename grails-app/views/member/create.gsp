@@ -41,7 +41,12 @@
                 <g:field type="email" name="email" class="form-control input" value="${member?.email}" placeholder="Please Enter Email Address"/>
                 <UIHelper:renderErrorMessage fieldName="email" model="${member}" errorMessage="Please Enter a valid and Unique Email Address"/>
             </div>
-
+            <div class="well">
+                <div class="form-group">
+                    <label><g:message code="dOfB"/></label>
+                    <g:datePicker name="age" value="${member?.age}" noSelection="['':'-Choose-']"/>
+                </div>
+            </div>
             <div class="form-group">
                 <label><g:message code="password"/> *</label>
                 <g:passwordField name="password" class="form-control input" value="${member?.password}" placeholder="Please Enter Password"/>

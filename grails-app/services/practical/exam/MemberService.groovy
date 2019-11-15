@@ -1,7 +1,6 @@
 package practical.exam
 
 import grails.web.servlet.mvc.GrailsParameterMap
-
 class MemberService {
     def save(GrailsParameterMap params) {
         Member member = new Member(params)

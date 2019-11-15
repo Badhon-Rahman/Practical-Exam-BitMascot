@@ -8,6 +8,7 @@ class Member {
     String address
     String phone
     String password
+    Date age
     String memberType = GlobalConfig.USER_TYPE.REGULAR_MEMBER
 
     static constraints = {
@@ -17,7 +18,10 @@ class Member {
         lastName(nullable: true)
         address(nullable:false)
         phone(nullable: true)
+        age(nullable: true)
     }
+
+
 
     def beforeInsert (){
         this.password = this.password.encodeAsMD5()

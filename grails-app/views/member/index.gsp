@@ -61,6 +61,7 @@
                         <thead class="thead-dark">
                         <tr>
                             <g:sortableColumn property="firstName" title="${g.message(code: "user.name")}"/>
+                            <g:sortableColumn property="dateOfBirth" title="${g.message(code: "dOfB")}"/>
                             <g:sortableColumn property="email" title="${g.message(code: "email")}"/>
                             <g:sortableColumn property="phone" title="${g.message(code: "phone")}"/>
                             <th class="actionRow"><g:message code="action"/></th>
@@ -70,6 +71,7 @@
                         <g:each in="${memberList}" var="info">
                             <tr>
                                 <td>${info?.firstName} ${info?.lastName}</td>
+                                <td>${info?.age}</td>
                                 <td>${info?.email}</td>
                                 <td>${info?.phone}</td>
 
