@@ -7,7 +7,6 @@ class Member {
     String email
     String address
     String phone
-    Date dateOfBirth
     String password
     String memberType = GlobalConfig.USER_TYPE.REGULAR_MEMBER
 
@@ -18,7 +17,6 @@ class Member {
         lastName(nullable: true)
         address(nullable:false)
         phone(nullable: true)
-        dateOfBirth(nullable: false)
     }
 
     def beforeInsert (){

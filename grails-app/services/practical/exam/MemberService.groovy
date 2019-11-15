@@ -44,7 +44,7 @@ class MemberService {
                 order("id", "desc")
             }
         }
-        return [list: memberList, count: memberList.totalCount]
+        return [list: memberList, count: Member.count()]
     }
 
 

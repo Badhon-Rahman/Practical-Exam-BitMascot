@@ -8,9 +8,11 @@
 * compiled file, but it's generally better to create a new file per style scope.
 *
 *= require bootstrap
+*= require fontawesome/css/all.min
 *= require grails
 *= require main
 *= require mobile
 *= require_self
 *=require userLogin
+*=require userListIndex
 */
