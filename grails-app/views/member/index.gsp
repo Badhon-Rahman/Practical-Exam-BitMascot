@@ -30,9 +30,7 @@
 <section>
     <nav>
         <ul>
-            <li><a href="#">User</a></li>
-
-
+            <UIHelper:leftNavigation/>
         </ul>
     </nav>
 
@@ -79,7 +77,7 @@
                                 %{--Table Actions --}%
                                 <td>
                                     <div class="btn-group">
-                                        <g:link controller="member" action="details" class="btn btn-secondary" id="${info.id}"><i class="fas fa-eye"></i></g:link>
+                                        <g:link controller="profile" action="details" class="btn btn-secondary" id="${info.id}"><i class="fas fa-eye"></i></g:link>
                                         <g:link controller="member" action="edit" class="btn btn-secondary" id="${info.id}"><i class="fas fa-edit"></i></g:link>
                                         <g:link controller="member" action="delete" id="${info.id}" class="btn btn-secondary delete-confirmation"><i class="fas fa-trash"></i></g:link>
                                     </div>

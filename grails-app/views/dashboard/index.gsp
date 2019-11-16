@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <asset:stylesheet src="UserListIndex.css"/>
 </head>
 <body>
@@ -17,12 +18,9 @@
 <section>
     <nav>
         <ul>
-            <li><a href="#">User</a></li>
-
-
+            <UIHelper:leftNavigation/>
         </ul>
     </nav>
-
     <article>
         <h1>Dashboard</h1>
     </article>
