@@ -27,7 +27,7 @@ class AuthenticationMassageTagLib {
         ]
 
         if(authenticationService.isAdministratorMember()){
-            navigations.add([controller: "member", action: "index", name: "member"])
+            navigations.add([controller: "member", action: "index", name: "user.list"])
         }
 
         navigations.each { menu ->

@@ -7,18 +7,17 @@ class Member {
     String email
     String address
     String phone
+    Date age = new Date()
     String password
-    Date age
     String memberType = GlobalConfig.USER_TYPE.REGULAR_MEMBER
 
     static constraints = {
-        email(email: true, nullable: false, unique: true, blank: false)
+        email(nullable: false, unique: true, blank: false)
         password(blank: false)
         firstName(nullable:false)
         lastName(nullable: true)
-        address(nullable:false)
+        address(nullable:true)
         phone(nullable: true)
-        age(nullable: true)
     }
 
 
