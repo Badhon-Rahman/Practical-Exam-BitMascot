@@ -8,15 +8,6 @@ class MemberController {
         [memberList: response.list, total:response.count]
     }
 
-    def details(Integer id) {
-        def response = memberService.getById(id)
-        if (!response){
-            redirect(controller: "member", action: "index")
-        }else{
-            [member: response]
-        }
-    }
-
     def create() {
         [member: flash.redirectParams]
     }
@@ -64,22 +55,6 @@ class MemberController {
                 flash.message = AppUtil.infoMessage(g.message(code: "updated"))
                 redirect(controller: "member", action: "index")
             }
-        }
-    }
-
-    def delete(Integer id) {
-        def response = memberService.getById(id)
-        if (!response){
-            flash.message = AppUtil.infoMessage(g.message(code: "invalid.entity"), false)
-            redirect(controller: "member", action: "index")
-        }else{
-            response = memberService.delete(response)
-            if (!response){
-                flash.message = AppUtil.infoMessage(g.message(code: "unable.to.delete"), false)
-            }else{
-                flash.message = AppUtil.infoMessage(g.message(code: "deleted"))
-            }
-            redirect(controller: "member", action: "index")
         }
     }
 
