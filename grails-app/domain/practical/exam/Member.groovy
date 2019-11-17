@@ -21,7 +21,6 @@ class Member {
     }
 
 
-
     def beforeInsert (){
         this.password = this.password.encodeAsMD5()
     }

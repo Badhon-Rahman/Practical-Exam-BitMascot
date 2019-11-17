@@ -26,39 +26,25 @@ class MemberController {
         }
     }
 
-
-    def edit(Integer id) {
-        if (flash.redirectParams) {
-            [member: flash.redirectParams]
-        } else {
-            def response = memberService.getById(id)
-            if (!response) {
-                flash.message = AppUtil.infoMessage(g.message(code: "invalid.entity"), false)
-                redirect(controller: "member", action: "index")
-            } else {
-                [member: response]
-            }
-        }
+    def changePassword() {
     }
 
-
     def update() {
-        def response = memberService.getById(params.id)
+        def response = memberService.getById(2)
         if (!response){
             flash.message = AppUtil.infoMessage(g.message(code: "invalid.entity"), false)
-            redirect(controller: "member", action: "index")
+            redirect(controller: "member", action: "changePassword")
         }else{
             response = memberService.update(response, params)
             if (!response.isSuccess){
                 flash.redirectParams = response.model
                 flash.message = AppUtil.infoMessage(g.message(code: "unable.to.update"), false)
-                redirect(controller: "member", action: "edit")
+                redirect(controller: "member", action: "changePassword")
             }else{
                 flash.message = AppUtil.infoMessage(g.message(code: "updated"))
-                redirect(controller: "member", action: "index")
+                redirect(controller: "dashboard", action: "index")
             }
         }
     }
-
 
 }

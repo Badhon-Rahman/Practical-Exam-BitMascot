@@ -2,7 +2,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <asset:stylesheet src="UserListIndex.css"/>
 </head>
 <body>

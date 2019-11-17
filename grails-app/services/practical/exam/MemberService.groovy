@@ -32,6 +32,16 @@ class MemberService {
         return Member.get(id)
     }
 
+    def getMember(){
+        def authorization = AppUtil.getAppSession()[AUTHORIZED]
+        return authorization?.member
+    }
+
+    def getId(){
+        def member = getMember()
+        return "${member.id}"
+    }
+
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
         List<Member> memberList = Member.createCriteria().list(params) {
