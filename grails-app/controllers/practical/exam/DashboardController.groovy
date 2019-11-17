@@ -1,6 +1,9 @@
 package practical.exam
 
 class DashboardController {
-
-    def index() { }
+    MemberService memberService
+    def index() {
+        def response = memberService.list(params)
+        [memberList: response.list, total:response.count]
+    }
 }

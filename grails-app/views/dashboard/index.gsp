@@ -19,6 +19,9 @@
     <nav>
         <ul>
             <UIHelper:leftNavigation/>
+            <g:each in="${memberList}" var="info">
+                <g:link controller="profile" action="details" class="" id="${info.id}">User Profile</g:link>
+            </g:each>
         </ul>
     </nav>
     <article>

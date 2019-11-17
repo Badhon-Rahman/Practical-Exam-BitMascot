@@ -22,9 +22,11 @@
     <nav>
         <ul>
             <UIHelper:leftNavigation/>
+            <g:each in="${memberList}" var="info">
+                <g:link controller="profile" action="details" class="" id="${info.id}">User Profile</g:link>
+            </g:each>
         </ul>
     </nav>
-
     <article>
         <div class="card">
             <div class="card-header">
@@ -54,7 +56,6 @@
                             <g:sortableColumn property="dateOfBirth" title="${g.message(code: "dOfB")}"/>
                             <g:sortableColumn property="email" title="${g.message(code: "email")}"/>
                             <g:sortableColumn property="phone" title="${g.message(code: "phone")}"/>
-                            <th class="actionRow"><g:message code="action"/></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -64,15 +65,6 @@
                                 <td>${info?.age}</td>
                                 <td>${info?.email}</td>
                                 <td>${info?.phone}</td>
-
-                                %{--Table Actions --}%
-                                <td>
-                                    <div class="btn-group">
-                                        <g:link controller="profile" action="details" class="btn btn-secondary" id="${info.id}"><i class="fas fa-eye"></i></g:link>
-                                        <g:link controller="member" action="edit" class="btn btn-secondary" id="${info.id}"><i class="fas fa-edit"></i></g:link>
-                                        <g:link controller="member" action="delete" id="${info.id}" class="btn btn-secondary delete-confirmation"><i class="fas fa-trash"></i></g:link>
-                                    </div>
-                                </td>
                             </tr>
                         </g:each>
                         </tbody>
