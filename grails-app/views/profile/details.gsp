@@ -1,27 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="card">
-    <div class="card-header">
-        <g:message code="member" args="['Details']"/>
-    </div>
-    <div class="card-body">
-        <g:if test="${member}">
-            <table class="table">
-                <tr>
-                    <th class="text-right"><g:message code="first.name"/></th><td class="text-left">${member.firstName}</td>
-                </tr>
-                <tr>
-                    <th class="text-right"><g:message code="last.name"/></th><td class="text-left">${member.lastName}</td>
-                </tr>
-                <tr>
-                    <th class="text-right"><g:message code="email"/></th><td class="text-left">${member.email}</td>
-                </tr>
-                <tr>
-                    <th class="text-right"><g:message code="member.type"/></th><td class="text-left">${member.memberType}</td>
-                </tr>
-            </table>
-        </g:if>
-        <div class="form-action-panel">
-            <g:link controller="member" action="index" class="btn btn-primary"><g:message code="cancel"/></g:link>
-        </div>
-    </div>
-</div>
+    <asset:stylesheet src="UserListIndex.css"/>
+</head>
+<body>
+<header>
+
+    <ul class="navbar-nav ml-auto">
+        <li><h4>User Profile</h4></li>
+        <li><UIHelper:memberActionMenu/></li>
+    </ul>
+
+</header>
+
+<section>
+    <nav>
+        <ul>
+            <UIHelper:leftNavigation/>
+        </ul>
+    </nav>
+    <article>
+        <UIHelper:userDetailsView/>
+    </article>
+</section>
+</body>
+</html>
+

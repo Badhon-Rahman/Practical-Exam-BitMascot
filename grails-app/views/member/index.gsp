@@ -1,3 +1,4 @@
+<%@ page import="practical.exam.MemberService" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -22,9 +23,6 @@
     <nav>
         <ul>
             <UIHelper:leftNavigation/>
-            <g:each in="${memberList}" var="info">
-                <g:link controller="profile" action="details" class="" id="${info.id}">User Profile</g:link>
-            </g:each>
         </ul>
     </nav>
     <article>
@@ -32,8 +30,6 @@
             <div class="card-header">
                 <g:message code="member" args="['List']"/>
                 <span class="float-right">
-
-                    %{--Search Panel --}%
                     <div class="btn-group">
                         <g:form controller="member" action="index" method="GET">
                             <div class="input-group" id="search-area">

@@ -8,9 +8,11 @@ class MemberController {
         [memberList: response.list, total:response.count]
     }
 
+
     def create() {
         [member: flash.redirectParams]
     }
+
 
     def save() {
         def response = memberService.save(params)

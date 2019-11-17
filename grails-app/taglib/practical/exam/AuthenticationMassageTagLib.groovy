@@ -21,19 +21,57 @@ class AuthenticationMassageTagLib {
         out << "</div></li>"
     }
 
+
     def leftNavigation = { attrs, body ->
         List navigations = [
                 [controller: "dashboard", action: "index", name: "dashboard"],
+                [controller: "profile", action: "details", name: "user"]
         ]
 
         if(authenticationService.isAdministratorMember()){
             navigations.add([controller: "member", action: "index", name: "user.list"])
         }
-
         navigations.each { menu ->
             out << '<li class="list-group-item">'
             out << g.link(controller: menu.controller, action: menu.action) { g.message(code: menu.name, args: ['']) }
             out << '</li>'
         }
     }
+
+    def userDetailsView = { attrs, body ->
+        out <<' <table class="table">'
+        out <<'<tr>'
+        out << '<td class="text-right>'
+        out << g.link(class:""){authenticationService.getFirstName()}
+        out << '</td>'
+        out << '</tr>'
+        out <<'<tr>'
+        out << '<td class="text-right>'
+        out << g.link(class:""){authenticationService.getLastName()}
+        out << '</td>'
+        out << '</tr>'
+        out <<'<tr>'
+        out << '<td class="text-right>'
+        out << g.link(class:""){authenticationService.getAddress()}
+        out << '</td>'
+        out << '</tr>'
+        out <<'<tr>'
+        out << '<td class="text-right>'
+        out << g.link(class:""){authenticationService.getPhone()}
+        out << '</td>'
+        out << '</tr>'
+        out <<'<tr>'
+        out << '<td class="text-right>'
+        out << g.link(class:""){authenticationService.getEmail()}
+        out << '</td>'
+        out << '</tr>'
+        out <<'<tr>'
+        out << '<td class="text-right>'
+        out << g.link(class:""){authenticationService.getDateOfBirth()}
+        out << '</td>'
+        out << '</tr>'
+        out <<'</table>'
+    }
+
+
 }

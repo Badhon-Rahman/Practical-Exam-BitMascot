@@ -32,7 +32,6 @@ class MemberService {
         return Member.get(id)
     }
 
-
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
         List<Member> memberList = Member.createCriteria().list(params) {

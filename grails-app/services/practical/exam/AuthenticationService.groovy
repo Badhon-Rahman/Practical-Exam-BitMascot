@@ -38,6 +38,30 @@ class AuthenticationService {
         return "${member.firstName} ${member.lastName}"
     }
 
+    def getFirstName(){
+        def member = getMember()
+        return "First Name:   ${member.firstName}"
+    }
+    def getLastName(){
+        def member = getMember()
+        return "Last Name:   ${member.lastName}"
+    }
+    def getAddress(){
+        def member = getMember()
+        return "Address:   ${member.address}"
+    }
+    def getPhone(){
+        def member = getMember()
+        return "Phone:   ${member.phone}"
+    }
+    def getEmail(){
+        def member = getMember()
+        return "Email:   ${member.email}"
+    }
+    def getDateOfBirth(){
+        def member = getMember()
+        return "Date of Birth:   ${member.age}"
+    }
     def isAdministratorMember(){
         def member = getMember()
         if (member && member.memberType == GlobalConfig.USER_TYPE.ADMINISTRATOR){
