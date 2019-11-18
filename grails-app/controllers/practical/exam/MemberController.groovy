@@ -2,6 +2,7 @@ package practical.exam
 
 class MemberController {
     MemberService memberService
+    AuthenticationService authenticationService
 
     def index() {
         def response = memberService.list(params)
@@ -27,13 +28,27 @@ class MemberController {
     }
 
     def changePassword() {
+        def id
+        id = memberService.getUserId()
+        if (flash.redirectParams) {
+            [member: flash.redirectParams]
+        } else {
+            def response = memberService.getById(id)
+            if (!response) {
+                flash.message = AppUtil.infoMessage(g.message(code: "invalid.entity"), false)
+                redirect(controller: "dashboard", action: "index")
+            } else {
+                [member: response]
+            }
+        }
     }
 
     def update() {
-        def response = memberService.getById(2)
+        def id = memberService.getUserId()
+        def response = memberService.getById(id)
         if (!response){
             flash.message = AppUtil.infoMessage(g.message(code: "invalid.entity"), false)
-            redirect(controller: "member", action: "changePassword")
+            redirect(controller: "dashboard", action: "index")
         }else{
             response = memberService.update(response, params)
             if (!response.isSuccess){

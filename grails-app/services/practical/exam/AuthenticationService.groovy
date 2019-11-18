@@ -32,6 +32,11 @@ class AuthenticationService {
         return authorization?.member
     }
 
+    def getId(){
+        def member = getMember()
+        return "${member.id}}"
+    }
+
 
     def getMemberName(){
         def member = getMember()

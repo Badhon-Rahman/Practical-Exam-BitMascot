@@ -2,6 +2,18 @@ package practical.exam
 
 import grails.web.servlet.mvc.GrailsParameterMap
 class MemberService {
+    private static final String AUTHORIZED = "AUTHORIZED"
+
+    def getMember(){
+        def authorization = AppUtil.getAppSession()[AUTHORIZED]
+        return authorization?.member
+    }
+
+    def getUserId(){
+        def member = getMember()
+        return member.id
+    }
+
     def save(GrailsParameterMap params) {
         Member member = new Member(params)
         def response = AppUtil.saveResponse(false, member)
@@ -32,15 +44,6 @@ class MemberService {
         return Member.get(id)
     }
 
-    def getMember(){
-        def authorization = AppUtil.getAppSession()[AUTHORIZED]
-        return authorization?.member
-    }
-
-    def getId(){
-        def member = getMember()
-        return "${member.id}"
-    }
 
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()

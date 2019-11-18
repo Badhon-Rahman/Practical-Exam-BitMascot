@@ -3,6 +3,7 @@ package practical.exam
 class AuthenticationMassageTagLib {
     static namespace = "UIHelper"
     AuthenticationService authenticationService
+    MemberService memberService
 
     def renderErrorMessage = { attrs, body ->
         def model = attrs.model
@@ -17,10 +18,16 @@ class AuthenticationMassageTagLib {
         out << '<li class="nav-item dropdown show">'
         out << g.link(class:"nav-link dropdown-toggle", "data-toggle":"dropdown"){authenticationService.getMemberName()}
         out << '<div class="dropdown-menu">'
+        if(!authenticationService.isAdministratorMember()){
+            out << g.link(controller: "member", action: "changePassword", name: "change.password")
+        }
         out << g.link(controller: "authentication", action: "logout", class: "dropdown-item"){g.message(code:"logout")}
         out << "</div></li>"
     }
 
+    def getUserId = { attrs, body ->
+        out << g.hiddenField(name:"id", value: authenticationService.getId())
+    }
 
     def leftNavigation = { attrs, body ->
         List navigations = [
