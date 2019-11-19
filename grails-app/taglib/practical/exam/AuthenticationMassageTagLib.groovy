@@ -36,7 +36,7 @@ class AuthenticationMassageTagLib {
         ]
 
         if(!authenticationService.isAdministratorMember()){
-            navigations.add([controller: "profile", action: "changePassword", name: "change.password"])
+            navigations.add([controller: "password", action: "changePassword", name: "change.password"])
         }
 
         if(authenticationService.isAdministratorMember()){
