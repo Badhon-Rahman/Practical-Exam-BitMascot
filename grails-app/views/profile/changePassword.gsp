@@ -18,7 +18,7 @@
                     <g:passwordField name="password" class="form-control" placeholder="Give New Password" required="required" value = "${newPassword}"/>
                 </div>
             </g:form>
-            <g:form controller="member" action="update">
+            <g:form controller="profile" action="update">
                 <UIHelper:getUserId/>
                 <div class="form-group">
                     <label><g:message code="passwordRe"/> *</label>
