@@ -58,7 +58,7 @@
                         <g:each in="${memberList}" var="info">
                             <tr>
                                 <td>${info?.firstName} ${info?.lastName}</td>
-                                <td>${info?.age}</td>
+                                <td>${info?.birthDate}</td>
                                 <td>${info?.email}</td>
                                 <td>${info?.phone}</td>
                             </tr>

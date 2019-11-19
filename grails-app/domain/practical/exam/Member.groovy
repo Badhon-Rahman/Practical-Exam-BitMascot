@@ -7,7 +7,7 @@ class Member {
     String email
     String address
     String phone
-    Date age = new Date()
+    Date birthDate = new Date()
     String password
     String memberType = GlobalConfig.USER_TYPE.REGULAR_MEMBER
 

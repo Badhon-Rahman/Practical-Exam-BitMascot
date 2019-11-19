@@ -4,7 +4,6 @@
     <asset:stylesheet src="application.css"/>
 </head>
 <body>
-
 <div class="login-page">
     <div class="form login-form">
         <g:form>

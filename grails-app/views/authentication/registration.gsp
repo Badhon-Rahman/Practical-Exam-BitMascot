@@ -44,7 +44,7 @@
             <div class="well">
                 <div class="form-group">
                     <label><g:message code="dOfB"/></label>
-                    <g:datePicker name="age" value="${member?.age}" noSelection="['':'-Choose-']"/>
+                    <g:datePicker name="birthDate" value="${member?.birthDate}" noSelection="['':'-Choose-']"/>
                 </div>
             </div>
             <div class="form-group">

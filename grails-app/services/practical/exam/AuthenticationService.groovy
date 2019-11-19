@@ -67,7 +67,7 @@ class AuthenticationService {
     }
     def getDateOfBirth(){
         def member = getMember()
-        return "Date of Birth:   ${member.age}"
+        return "Date of Birth:   ${member.birthDate}"
     }
     def isAdministratorMember(){
         def member = getMember()
