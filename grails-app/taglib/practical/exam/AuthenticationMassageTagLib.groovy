@@ -49,6 +49,9 @@ class AuthenticationMassageTagLib {
         }
     }
 
+    def age = { attrs, body ->
+        out << g.link(){authenticationService.getAge()}
+    }
     def userDetailsView = { attrs, body ->
         out <<' <table class="table">'
         out <<'<tr>'

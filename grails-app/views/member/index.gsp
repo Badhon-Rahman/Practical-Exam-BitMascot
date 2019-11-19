@@ -42,8 +42,6 @@
                         </g:form>
                     </div>
                 </span>
-
-                %{--Table Panel--}%
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead class="thead-dark">
@@ -58,14 +56,13 @@
                         <g:each in="${memberList}" var="info">
                             <tr>
                                 <td>${info?.firstName} ${info?.lastName}</td>
-                                <td>${info?.birthDate}</td>
+                                <td class="alignText">${new Date().getYear() - info?.birthDate.getYear()}</td>
                                 <td>${info?.email}</td>
                                 <td>${info?.phone}</td>
                             </tr>
                         </g:each>
                         </tbody>
                     </table>
-                    %{--Pagination Area--}%
                 <div class="paginate">
                     <g:paginate total="${total ?: 0}" />
                 </div>

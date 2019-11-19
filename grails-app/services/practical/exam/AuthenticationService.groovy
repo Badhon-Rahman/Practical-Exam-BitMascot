@@ -69,6 +69,14 @@ class AuthenticationService {
         def member = getMember()
         return "Date of Birth:   ${member.birthDate}"
     }
+
+    def getAge(){
+        def member = getMember()
+        def today = new Date().getYear()
+        def dbo = member.birthDate.getYear()
+        def period = today - dbo
+        return  period
+    }
     def isAdministratorMember(){
         def member = getMember()
         if (member && member.memberType == GlobalConfig.USER_TYPE.ADMINISTRATOR){

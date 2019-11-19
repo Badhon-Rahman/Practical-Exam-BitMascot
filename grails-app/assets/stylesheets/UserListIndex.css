@@ -121,3 +121,7 @@ footer {
     border: 1px solid #d3dbde;
     float: left;
 }
+
+.alignText{
+    text-align: center;
+}
