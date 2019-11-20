@@ -28,7 +28,7 @@
     <article>
         <div class="card">
             <div class="card-header">
-                <h4>User List</h4>
+                <h4><i class="fas fa-users"></i> User List</h4>
                 <span class="float-right">
                     <div class="btn-group">
                         <g:form controller="member" action="index" method="GET">

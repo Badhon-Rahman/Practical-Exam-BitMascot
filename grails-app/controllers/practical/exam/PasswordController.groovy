@@ -40,14 +40,4 @@ class PasswordController {
         }
     }
 
-    def matchedPassword(ev) {
-        def matchedPassword = ev.target.value;
-        if (this.newPassword == matchedPassword) {
-            this.passwordMassage = "Password matched";
-            this.matchValidation = true;
-        } else {
-            this.passwordMassage = "Password did not matched";
-            this.matchValidation = false;
-        }
-    }
 }

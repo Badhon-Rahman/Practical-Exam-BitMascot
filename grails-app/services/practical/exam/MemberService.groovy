@@ -1,6 +1,9 @@
 package practical.exam
 
 import grails.web.servlet.mvc.GrailsParameterMap
+
+import java.security.MessageDigest
+
 class MemberService {
     private static final String AUTHORIZED = "AUTHORIZED"
 
@@ -30,10 +33,36 @@ class MemberService {
     def update(Member member, GrailsParameterMap params) {
         member.properties = params
         def response = AppUtil.saveResponse(false, member)
-        if (member.validate()) {
-            member.save(flush: true)
-            if (!member.hasErrors()){
-                response.isSuccess = true
+
+        String getPassword = ""
+        String oldPas = ""
+        String curPas = ""
+        String submitPassword = ""
+        Integer I = 0
+        String tempPassword = member.password
+        while (tempPassword[I] != ","){
+            getPassword += tempPassword[I]
+            I++
+        }
+        I++
+        while (tempPassword[I] != ","){
+            oldPas += tempPassword[I]
+            I++
+        }
+        I++
+        while (tempPassword[I] != ","){
+            curPas += tempPassword[I]
+            I++
+        }
+
+        oldPas = MessageDigest.getInstance("MD5").digest(oldPas.bytes).encodeHex().toString()
+        if(oldPas == getPassword){
+            member.password = curPas
+            if (member.validate()) {
+                member.save(flush: true)
+                if (!member.hasErrors()){
+                    response.isSuccess = true
+                }
             }
         }
         return response

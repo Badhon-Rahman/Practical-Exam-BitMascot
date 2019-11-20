@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <asset:stylesheet src="UserListIndex.css"/>
+    <asset:stylesheet src="userLogin.css"/>
 </head>
 <body>
 <header>
@@ -25,9 +26,9 @@
     <article>
         <div class="card">
             <div class="card-header center">
-                <h4>User Profile</h4>
+                <h4><i class="fas fa-user-circle"></i> User Profile</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body center">
                 <UIHelper:userDetailsView/>
             </div>
         </div>

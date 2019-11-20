@@ -27,39 +27,29 @@
     <article>
         <div class="card">
             <div class="card-header">
-                <h4 class="center">Change Password</h4>
+                <h4 class="center"><i class="fas fa-lock"></i> Change Password</h4>
             </div>
             <div class="card-body">
                 <div class="login-page">
                     <div class="form login-form">
                         <div class="form-group">
+                        <g:form controller="password" action="update">
+                            <UIHelper:getUserId/>
                             <label><g:message code="passwordPrv"/> *</label>
-                            <g:passwordField name="oldPassword" class="form-control" placeholder="Give Old Password"  required="required" value="${oldPassword}"/>
-                            <g:if test="${member.password == oldPassword}">
-                                <span>Password Matched</span>
-                            </g:if>
-                            <g:else>
-                                <span>Password did not matched</span>
-                            </g:else>
+                            <g:hiddenField name="password" value="${member.password}"/>
+                            <g:passwordField name="password" class="form-control" placeholder="Give Old Password"  required="required" id="oldP"/>
                         </div>
                         <div class="form-group">
                             <label><g:message code="passwordNew"/> *</label>
-                            <g:passwordField name="password" class="form-control" placeholder="Give New Password"  required="required" value = "${newPassword}"/>
+                            <g:passwordField name="password" class="form-control" placeholder="Give New Password"  required="required" id = "newPassword" oninput="passwordValidation()"/>
                         </div>
-                            <g:form controller="password" action="update">
-                                <UIHelper:getUserId/>
                                 <div class="form-group">
                                     <label><g:message code="passwordRe"/> *</label>
-                                    <g:passwordField name="password" class="form-control input" value="${confirmPassword}" placeholder="Re-enter Password"/>
-                                    <g:if test="${newPassword == confirmPassword}">
-                                        <span>Password Matched</span>
-                                    </g:if>
-                                    <g:else>
-                                        <span>Password did not matched</span>
-                                    </g:else>
+                                    <g:passwordField name="password" class="form-control input" id="rePassword"  placeholder="Re-enter Password" oninput="passwordValidation()"/>
+                                    <span id="passwordMassage"> </span>
                                 </div>
                                 <div class="row">
-                                    <g:submitButton class="btn btn-primary" name="Change Password" value="Change"/>
+                                    <g:submitButton class="btn btn-primary btn-lg" name="Change Password" value="Change Password"/>
                                     <button class="btn btn-primary" id="reset-btn" type="reset" value="Reset">Clear</button>
                                 </div>
                             </g:form>
@@ -69,6 +59,25 @@
         </div>
     </article>
 </section>
+<script>
+    function submitOldPassword() {
+        var oldP = document.getElementById("oldP").value;
+    }
+    function passwordValidation() {
+        var newP = document.getElementById("newPassword").value;
+        var newR = document.getElementById("rePassword").value;
+        if(newR == ''){
+
+        }
+        else if(newP == newR){
+            document.getElementById("passwordMassage").innerHTML = '<i class=\"fas fa-check\"></i>  Password Matched';
+        }
+        else{
+            document.getElementById("passwordMassage").innerHTML = '<i class="fas fa-times"></i>  Password did not Matched';
+        }
+
+    }
+</script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>

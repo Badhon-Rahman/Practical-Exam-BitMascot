@@ -55,17 +55,17 @@ class AuthenticationMassageTagLib {
     def userDetailsView = { attrs, body ->
         out <<' <table class="table">'
         out <<'<tr>'
-        out << '<td class="text-right>'
+        out << '<td class="text-center>'
         out << g.link(class:""){authenticationService.getFirstName()}
         out << '</td>'
         out << '</tr>'
         out <<'<tr>'
-        out << '<td class="text-right>'
+        out << '<td class="text-center>'
         out << g.link(class:""){authenticationService.getLastName()}
         out << '</td>'
         out << '</tr>'
         out <<'<tr>'
-        out << '<td class="text-right>'
+        out << '<td class="text-center>'
         out << g.link(class:""){authenticationService.getAddress()}
         out << '</td>'
         out << '</tr>'
@@ -75,12 +75,12 @@ class AuthenticationMassageTagLib {
         out << '</td>'
         out << '</tr>'
         out <<'<tr>'
-        out << '<td class="text-right>'
+        out << '<td class="text-center>'
         out << g.link(class:""){authenticationService.getEmail()}
         out << '</td>'
         out << '</tr>'
         out <<'<tr>'
-        out << '<td class="text-right>'
+        out << '<td class="text-center>'
         out << g.link(class:""){authenticationService.getDateOfBirth()}
         out << '</td>'
         out << '</tr>'

@@ -5,12 +5,13 @@
 .center{
     justify-content: center;
 }
+
 .form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
     max-width: 500px;
-    margin: 50px auto 100px;
+    margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -67,6 +68,7 @@
     z-index: 1;
     max-width: 300px;
     margin: 0 auto;
+
 }
 .container:before, .container:after {
     content: "";
@@ -96,7 +98,7 @@
     color: #EF3B3A;
 }
 body {
-    background: #f2f2f2;
+    background: white;
 
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;

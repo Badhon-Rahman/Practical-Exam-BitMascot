@@ -25,7 +25,7 @@
     <article>
         <div class="card">
             <div class="card-header">
-               <h4 class="center">Dashboard</h4>
+               <h4 class="center"><i class="fas fa-home"></i> Dashboard</h4>
             </div>
             <div class="card-body">
             </div>

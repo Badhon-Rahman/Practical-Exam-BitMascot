@@ -1,5 +1,7 @@
 package practical.exam
 
+import javax.validation.constraints.Null
+
 class Member {
     Integer id
     String firstName
@@ -24,7 +26,6 @@ class Member {
     def beforeInsert (){
         this.password = this.password.encodeAsMD5()
     }
-
 
     def beforeUpdate(){
         this.password = this.password.encodeAsMD5()
