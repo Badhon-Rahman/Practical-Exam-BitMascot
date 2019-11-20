@@ -2,9 +2,7 @@ package practical.exam
 
 class PasswordController {
     MemberService memberService
-    def newPassword = ""
-    def passwordMassage = ""
-    def matchValidation = false
+
     def changePassword() {
         def id
         id = memberService.getUserId()

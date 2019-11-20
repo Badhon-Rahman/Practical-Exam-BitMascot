@@ -20,6 +20,7 @@ class Member {
         lastName(nullable: true)
         address(nullable:true)
         phone(nullable: true)
+        birthDate(nullable: false)
     }
 
 

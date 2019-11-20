@@ -33,13 +33,12 @@ nav {
     float: left;
     width: 25%;
     height: 500px;
-    background: #ccc;
+    background: #f3f3ff;
     padding: 10px;
     margin: 70px auto 100px;
     text-decoration: none;
 }
 
-/* Style the list inside the menu */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -50,7 +49,7 @@ article {
     padding: 20px;
     width: 75%;
     background-color: #f3f3ff;
-    height: 300px; /* only for demonstration, should be removed */
+    height: auto;
 }
 
 /* Clear floats after the columns */

@@ -2,7 +2,6 @@ package practical.exam
 
 class MemberController {
     MemberService memberService
-    AuthenticationService authenticationService
 
     def index() {
         def response = memberService.list(params)

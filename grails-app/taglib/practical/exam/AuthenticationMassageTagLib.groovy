@@ -3,7 +3,6 @@ package practical.exam
 class AuthenticationMassageTagLib {
     static namespace = "UIHelper"
     AuthenticationService authenticationService
-    MemberService memberService
 
     def renderErrorMessage = { attrs, body ->
         def model = attrs.model
@@ -49,9 +48,6 @@ class AuthenticationMassageTagLib {
         }
     }
 
-    def age = { attrs, body ->
-        out << g.link(){authenticationService.getAge()}
-    }
     def userDetailsView = { attrs, body ->
         out <<' <table class="table">'
         out <<'<tr>'
@@ -86,6 +82,4 @@ class AuthenticationMassageTagLib {
         out << '</tr>'
         out <<'</table>'
     }
-
-
 }
