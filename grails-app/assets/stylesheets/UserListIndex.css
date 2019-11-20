@@ -1,9 +1,4 @@
-/*
-*= require fontawesome/css/all.min
-*/
-.endAlign{
-    justify-content: end;
-}
+
 .actionRow{
     width: 0px;
     text-align: center;
@@ -11,27 +6,30 @@
 * {
     box-sizing: border-box;
 }
+.center{
+    text-align: center;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style the header */
 header {
-    background-color: #666;
-    padding: 30px;
+    float: right;
+    padding: 10px;
     text-align: center;
-    font-size: 35px;
+    font-size: 20px;
     color: white;
 }
 
-/* Create two columns/boxes that floats next to each other */
 nav {
     float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
+    width: 25%;
+    height: 500px;
     background: #ccc;
-    padding: 20px;
+    padding: 10px;
+    margin: 70px auto 100px;
+    text-decoration: none;
 }
 
 /* Style the list inside the menu */
@@ -43,8 +41,8 @@ nav ul {
 article {
     float: left;
     padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
+    width: 75%;
+    background-color: #f3f3ff;
     height: 300px; /* only for demonstration, should be removed */
 }
 
@@ -73,8 +71,8 @@ footer {
 .paginate {
     background: #fff;
     border-radius: 2px;
-    height: 32px;
-    line-height: 32px;
+    height: 10px;
+    line-height: 10px;
     position: relative;
 }
 

@@ -2,6 +2,9 @@ package practical.exam
 
 class PasswordController {
     MemberService memberService
+    def newPassword = ""
+    def passwordMassage = ""
+    def matchValidation = false
     def changePassword() {
         def id
         id = memberService.getUserId()
@@ -34,6 +37,17 @@ class PasswordController {
                 flash.message = AppUtil.infoMessage(g.message(code: "updated"))
                 redirect(controller: "dashboard", action: "index")
             }
+        }
+    }
+
+    def matchedPassword(ev) {
+        def matchedPassword = ev.target.value;
+        if (this.newPassword == matchedPassword) {
+            this.passwordMassage = "Password matched";
+            this.matchValidation = true;
+        } else {
+            this.passwordMassage = "Password did not matched";
+            this.matchValidation = false;
         }
     }
 }

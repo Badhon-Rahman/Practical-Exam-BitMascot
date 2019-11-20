@@ -1,3 +1,10 @@
+/*
+*= require fontawesome/css/all.min
+*/
+
+.center{
+    justify-content: center;
+}
 .form {
     position: relative;
     z-index: 1;

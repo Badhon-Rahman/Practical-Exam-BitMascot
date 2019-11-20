@@ -1,10 +1,10 @@
-<%@ page import="practical.exam.MemberService" %>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <asset:stylesheet src="UserListIndex.css"/>
 </head>
@@ -12,9 +12,9 @@
 <header>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#">User Portal</a>
+            <g:link controller="dashboard" action="index" class=""><g:message code="home"/></g:link>
         </li>
-        <li><UIHelper:memberActionMenu/></li>
+        <UIHelper:memberActionMenu/>
     </ul>
 
 </header>
@@ -28,7 +28,7 @@
     <article>
         <div class="card">
             <div class="card-header">
-                <g:message code="member" args="['List']"/>
+                <h4>User List</h4>
                 <span class="float-right">
                     <div class="btn-group">
                         <g:form controller="member" action="index" method="GET">
@@ -42,12 +42,13 @@
                         </g:form>
                     </div>
                 </span>
+            </div>
                 <div class="card-body">
                     <table class="table table-bordered">
-                        <thead class="thead-dark">
+                        <thead class="thead-info">
                         <tr>
                             <g:sortableColumn property="firstName" title="${g.message(code: "user.name")}"/>
-                            <g:sortableColumn property="dateOfBirth" title="${g.message(code: "dOfB")}"/>
+                            <g:sortableColumn property="dateOfBirth" title="${g.message(code: "age")}"/>
                             <g:sortableColumn property="email" title="${g.message(code: "email")}"/>
                             <g:sortableColumn property="phone" title="${g.message(code: "phone")}"/>
                         </tr>
@@ -56,22 +57,22 @@
                         <g:each in="${memberList}" var="info">
                             <tr>
                                 <td>${info?.firstName} ${info?.lastName}</td>
-                                <td class="alignText">${new Date().getYear() - info?.birthDate.getYear()}</td>
+                                <td>${new Date().getYear() - info?.birthDate.getYear()}</td>
                                 <td>${info?.email}</td>
                                 <td>${info?.phone}</td>
                             </tr>
                         </g:each>
                         </tbody>
                     </table>
-                <div class="paginate">
-                    <g:paginate total="${total ?: 0}" />
-                </div>
-
+                    <div class="paginate">
+                        <g:paginate total="${total ?: 0}" />
+                     </div>
                 </div>
             </div>
-        </div>
     </article>
 </section>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -15,11 +15,11 @@ class AuthenticationMassageTagLib {
     }
 
     def memberActionMenu = { attrs, body ->
-        out << '<li class="nav-item dropdown show">'
+        out << '<li class="nav-item dropdown show right">'
         out << g.link(class:"nav-link dropdown-toggle", "data-toggle":"dropdown"){authenticationService.getMemberName()}
         out << '<div class="dropdown-menu">'
         if(!authenticationService.isAdministratorMember()){
-            out << g.link(controller: "member", action: "changePassword", name: "change.password")
+            out << g.link(controller: "password", action: "changePassword", name: "change.password", class: "dropdown-item"){g.message(code:"change.password")}
         }
         out << g.link(controller: "authentication", action: "logout", class: "dropdown-item"){g.message(code:"logout")}
         out << "</div></li>"

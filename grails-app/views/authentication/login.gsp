@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-
-
-    <asset:stylesheet src="application.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <asset:stylesheet src="userLogin.css"/>
 
 </head>
 <body>
@@ -27,8 +26,5 @@
         </g:form>
     </div>
 </div>
-
-<asset:javascript src="application.js"/>
-
 </body>
 </html>
