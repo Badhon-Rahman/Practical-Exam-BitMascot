@@ -1,0 +1,39 @@
+                                                                      Practical-Exam
+
+Project Description:
+
+This is a Full Stack project developed with Grails 3.3.x and MySql Database. This project contain a registration form to create new regular type user and after getting
+registered user can login with their given Unique email address and password. An Admin is created with Unique email and password with the given informations. Admin user
+can see user list with user age and search a user by their first name, last name or with email address but a regular user will not be able to access the user list as 
+this is restricted with Security Interceptor. Both the type of user can see their User Profile. Regular user can change their password by providing their old password 
+and two times the new password for the confirmation that the given two are same and for easy use of users to confirm new password a massage will be seen on time of 
+re-entering the password is that matched or did not match. If the given old is not matched it will not change to new password.Change Password is restricted only for 
+Regular user use. Admin user can not access the change password. Database is created with the name "exam".Database sql file is provided with the table member details and 
+with values of default admin user and some of my registered user in the directory named MySqlDatabase.The Database's dbCreate is update.So during the time of run the app
+the database will be updated.To run this Grails app read the Run Instruction.
+
+Run Instruction:
+
+1.Run Xampp app and start MySQL.  
+2.To Run the Project open on project directory and run the grails command “grails run-app”. 
+3. Open on browser: localhost:8080 (when the app will run it will try to go dashboard but for authentication it will go to
+login page and user need to re logged in when the secission will end).
+
+Login Instruction:
+
+1.Admin Login:
+Email: admin@localhost.local
+Password: admin
+
+2.Regular user Login: 
+Click on Register Now and then create a new regular type user in Registration form with a unique email address and required information.  Created user can logged in 
+and logged out.
+
+Tips:
+To create a new Grails run the command "grails create-app app-name".
+
+
+Created and Developed By:
+Name: Mostafizur Rahman
+Email: badhon.mostafizur@gmail.com
+Mobile: 01779438972
